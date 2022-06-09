@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício2</title>
+</head>
+<body>
+
+<h2>Método AppendChild()</h2>
+<input type="text" id="palavra">
+
+<ul id="myList">
+    <li>Café</li>
+    <li>chá</li>
+    <br>
+</ul>
+
+<p>Aperte "Inserir" para adicionar um item a lista</p>
+
+<input type="radio" name="cores" value="blue" id="rad1"> 
+<label for="rad1"> Azul </label>
+<input type="radio" name="cores" value="red" id="rad2"> 
+<label for="rad2"> Vermelho </label>
+<input type="radio" name="cores" value="green" id="rad3"> 
+<label for="rad3"> Verde</label>
+
+<button onclick="myfunction()">Inserir</button>
+
+<script>
+function myfunction(){
+    const node = document.createElement("li");
+    const cor= document.querySelector('input[name="cores"]:checked').value;
+    const novoValor = document.getElementById('palavra').value
+    const textnode = document.createTextNode(novoValor);
+    node.appendChild(textnode);
+    document.getElementById("myList").appendChild(node);
+    node.style.color=cor;
+}
+
+</script>
+
+
+
+</body>
+</html>
+    
+
+
+
